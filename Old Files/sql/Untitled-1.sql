@@ -1,0 +1,1 @@
+SELECT * FROM `mustafa`.`countries` LIMIT 1000;
