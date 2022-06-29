@@ -14,5 +14,8 @@
     navbar("CartFr.php", "sixth", ["home", "about", "contact", "products", "SignUpAndLogin","Cart"], "eng");
     
     ?>
+     <?php
+    include_once("commoncode.php")
+     ?>
 </body>
 </html>

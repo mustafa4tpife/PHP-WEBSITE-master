@@ -9,7 +9,7 @@ $_SESSION["userloggedin"]=false;
 $host = "localhost";
 $username = "root";
 $psw = "";
-$database = "shop";
+$database = "Mustafa";
 $connection = new mysqli($host, $username, $psw, $database);
 if(isset($_POST["user"])){
 $sqlsearchuser = $connection->prepare("SELECT * from users where usename = ?");

@@ -1,6 +1,6 @@
 
-//*DROP DATABASE Shop;
-//*CREATE DATABASE Shop;
+DROP DATABASE Shop;
+CREATE DATABASE Shop;
 
 use Shop;
 

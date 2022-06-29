@@ -6,19 +6,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="mustafa.css">
-
-
-
 </head>
-
-
 
 <body>
   <?php
 
-include_once("navigation.php");
-navbar("productseng.php", "fourth", ["Accueil", "à propos", "Contact", "Produits", "inscription et connexion","Chariot"], "fr");
+  include_once("navigation.php");
+  navbar("productseng.php", "fourth", ["home", "about", "contact", "products", "SignUpAndLogin","Cart"], "fr");
   ?>
+ <?php
+    include_once("commoncode.php")
+     ?>
   <?php
   $count = 0;
 
@@ -29,7 +27,7 @@ navbar("productseng.php", "fourth", ["Accueil", "à propos", "Contact", "Produit
 
   $connection = new mysqli($host, $username, $psw, $database);
 
-  $sqlstatement = $connection->prepare("SELECT * FROM products natural join Descriptions where langugesid=2");
+  $sqlstatement = $connection->prepare("SELECT * FROM products natural join Descriptions where langugesid=1");
 
 
   $sqlstatement->execute();
@@ -39,27 +37,28 @@ navbar("productseng.php", "fourth", ["Accueil", "à propos", "Contact", "Produit
 
     if ($count == 0) {
   ?>
-        <div class="gamess">
-        <?php
-      }
-        ?>
-       <div class="card">
+      <div class="gamess">
+      <?php
+    }
+      ?>
+      <div class="card">
         <h1><?= $row["productsName"] ?></h1>
-        <a href="Showdetail.php?ProductId=<?= $row["prodid"] ?>&language=fr">
+        <a href="Showdetail.php?ProductId=<?= $row["prodid"] ?>&language=eng">
           <img src="<?= $row["imgname"] ?>">
         </a>
         <p class="price"><?= $row["price"] ?></p>
         <p class="gamed"><?= $row["descriptionsname"] ?> </p>
-          <p><button>Add to Cart</button></p>
-        </div>
+        <p><button>ajouter</button></p>
+      </div>
     <?php
-      $count++;
-      if ($count == 6) {
-        print("</div>");
-        $count = 0;
-      }
+    $count++;
+    if ($count == 6) {
+      print("</div>");
+      $count = 0;
     }
-  
+  }
+
+
     ?>
 </body>
 

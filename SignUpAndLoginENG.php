@@ -27,10 +27,10 @@ if ($_POST["Psw"]== $_POST["confirmpsw"]) {
     $user="root";
     $psw="";
     $portNo="3306";
-    $database="Shop";
+    $database="mustafa";
 
     $connection = new mysqli($host,$user,$psw,$database,$portNo);
-    $sqlInsert = $connection->prepare("INSERT INTO USERS(UserName,UserPassword) Values(?,?)");
+    $sqlInsert = $connection->prepare("INSERT INTO Users(UserName,UserPassword) Values(?,?)");
     $sqlInsert->bind_param("ss",$_POST["UsersName"],$_POST["Psw"]);
     if(!$sqlInsert->execute()){
     print("user already exist");
