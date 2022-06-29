@@ -17,7 +17,7 @@
   <?php
 
 include_once("navigation.php");
-navbar("productsFr.php", "fourth", ["Accueil", "à propos", "Contact", "Produits", "inscription et connexion","Chariot"], "eng");
+navbar("productsFr.php", "fourth", ["home", "about", "contact", "products", "SignUpAndLogin","Cart"], "eng");
   ?>
   <?php
   $count = 0;

@@ -12,7 +12,7 @@
   <?php
 
   include_once("navigation.php");
-  navbar("productseng.php", "fourth", ["home", "about", "contact", "products", "SignUpAndLogin","Cart"], "fr");
+  navbar("productseng.php", "fourth", ["Accueil", "à propos", "Contact", "Produits", "inscription et connexion","Chariot"], "fr");
   ?>
  <?php
     include_once("commoncode.php")
