@@ -29,7 +29,7 @@ navbar("productsFr.php", "fourth", ["home", "about", "contact", "products", "Sig
 
   $connection = new mysqli($host, $username, $psw, $database);
 
-  $sqlstatement = $connection->prepare("SELECT * FROM products natural join Descriptions where langugesid=2");
+  $sqlstatement = $connection->prepare("SELECT * FROM products natural join Descriptions where langugesid=1");
 
 
   $sqlstatement->execute();
