@@ -2,7 +2,13 @@
 <?php
 function navbar($URL, $activepage, $buttontexts,$languge)
 {
-
+  session_start();
+  if(!isset($_SESSION["login"]))
+  {
+  $_SESSION["shopcart"]=array();
+  $_SESSION["login"]=false;
+  $_SESSION["Admin"]=false;
+  }
 
 ?>
   <nav>
@@ -24,12 +30,13 @@ function navbar($URL, $activepage, $buttontexts,$languge)
       <li><a href="products<?=$languge?>.php" <?php if ($activepage == "fourth") {
                                       print("class='active'");
                                     } ?>><?= $buttontexts[3] ?></a></li>
-     <li><a href="SignUpAndLogin<?=$languge?>.php" <?php if ($activepage == "fifth") {
+     <li><a href="signup.php" <?php if ($activepage == "fifth") {
                                       print("class='active'");
                                     } ?>><?= $buttontexts[4] ?></a></li>
       <li><a href="Cart<?=$languge?>.php" <?php if ($activepage == "sixth") {
                                       print("class='active'");
                                     } ?>><?= $buttontexts[5] ?></a></li>
+     
   </ul>
   </nav>
 <?php

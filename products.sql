@@ -93,8 +93,9 @@ values ("Call of Duty est une franchise de jeux vidéo de tir à la première pe
 
 CREATE TABLE Users(
     UserId INT NOT NULL AUTO_INCREMENT,
-    UserName VARCHAR(30) UNIQUE,
-    UserPassword VARCHAR(255),
+    UserName VARCHAR(30) NOT NULL UNIQUE,
+    UserPassword VARCHAR(255) NOT NULL,
+    uservalue varchar(5),
     PRIMARY KEY (UserId)
-);
 
+);

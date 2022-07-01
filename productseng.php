@@ -31,6 +31,14 @@ navbar("productsFr.php", "fourth", ["home", "about", "contact", "products", "Sig
 
   $sqlstatement = $connection->prepare("SELECT * FROM products natural join Descriptions where langugesid=1");
 
+  
+    if (isset($_POST["addtocart"]))
+        if (isset($_SESSION["shopcart"][$_POST["buyprod"]]))
+            $_SESSION["shopcart"][$_POST["buyprod"]]++;
+        else {
+            $_SESSION["shopcart"][$_POST["buyprod"]] = 1;
+        }
+
 
   $sqlstatement->execute();
 
@@ -50,7 +58,10 @@ navbar("productsFr.php", "fourth", ["home", "about", "contact", "products", "Sig
         </a>
         <p class="price"><?= $row["price"] ?></p>
         <p class="gamed"><?= $row["descriptionsname"] ?> </p>
-          <p><button>Add to Cart</button></p>
+        <form method="POST">
+                <input type="hidden" name="buyprod" value='<?= $row["productsID"] ?>'>
+                <input type="submit" name="addtocart" value='buy'>
+          </form>
         </div>
     <?php
       $count++;

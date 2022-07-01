@@ -1,9 +1,9 @@
 <?php
 session_start();
-if(!isset($_SESSION["userloggedin"]))
+if(!isset($_SESSION["login"]))
 {
 
-$_SESSION["userloggedin"]=false;
+$_SESSION["login"]=false;
 
 }
 $host = "localhost";

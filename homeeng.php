@@ -16,7 +16,7 @@
     
 
     include_once("navigation.php");
-    navbar("homefr.php","main", ["home","about","contact","products","SignUpAndLogin","Cart"], "eng");
+    navbar("homeeng.php","main", ["home","about","contact","products","signup","Cart"], "eng");
   ?>
     <div class="text-center">
         
