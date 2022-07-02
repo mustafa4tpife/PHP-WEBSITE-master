@@ -108,7 +108,7 @@ if (isset($_POST["sho"])) {
 
 		if($statement->exute())
 		{
-			echo "insert works";
+			echo "...works";
 		}
 
 	}
