@@ -78,7 +78,50 @@ if (isset($_POST["sho"])) {
 <form method="post">
       <br>
       <button type="submit" name="logoutbutton">logout</button>
-    </form>
+</form>
 
+<?php
+
+	if(isset(
+		$_POST["pName"] ,
+		$_POST["pImg"] ,
+		$_POST["pPrice"] ,
+		$_POST["lName"] ,
+		$_POST["dName"]))
+	{
+		$statement = $conn->prepare("
+			INSERT INTO products ( productsName, imgname, price ) VALUES ( ?,?,? );
+			INSERT INTO descriptions (descriptionsname, productsid, langugesid) VALUES ( ?, 
+				( SELECT productsID FROM products WHERE produtsName = ? ),
+				( SELECT languagesid FROM languages WHERE languagesname = ? )
+			);
+		");
+
+		$statement->bind_param("sss",
+			$_POST["pName"] ,
+			$_POST["pImg"] ,
+			$_POST["pPrice"] ,
+			$_POST["dName"] ,
+			$_POST["pName"] , 
+			$_POST["lName"]
+		);
+
+		if($statement->exute())
+		{
+			echo "works";
+		}
+
+	}
+
+?>
+
+<form method="post">
+	Product Name: <input type="text" name="pName"><br>
+	Product Image: <input type="text" name="pImg"><br>
+	Product Price: <input type="text" name="pPrice"><br>
+	Language Name: <input type="text" name="lName"><br>
+	Description Name: <input type="text" name="dName"><br>
+	<input type="submit">
+</form>
 </body>
 </html>
