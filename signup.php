@@ -14,7 +14,13 @@
 
 include_once("navigation.php");
 navbar("signup.php", "fifth", ["Home", "About", "Contact", "Products", "Signup", "Cart"], "eng");
+$servername = "localhost";
+ $username = "root";
+ $password = "";
+ $dbname = "Mustafa";
 
+ // Create connection
+ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($_SESSION["login"]==true){
     header("Location:logout.php");
     die();

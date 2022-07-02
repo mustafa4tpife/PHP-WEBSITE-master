@@ -39,7 +39,10 @@ if (isset($_POST['UserName']) && isset($_POST['Password'])) {
         $_SESSION["Admin"] = true;}
         $textt = "logout";
         $_SESSION["login"] = true;
+        $_SESSION["Userid"] = $data["UserId"];
+        $_SESSION["User"] = $_POST["UserName"];
         $_SESSION["UserRole"] = $data[0];
+        $_SESSION["shopcart"] = array();
         header("location: logout.php");
     } else {
         $message = "Please enter a valid Username and Password";

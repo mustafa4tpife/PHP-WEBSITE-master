@@ -7,8 +7,8 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-<link href="./main.css" rel="stylesheet">
-<link href="./mustafa.css" rel="stylesheet">
+<link href="main.css" rel="stylesheet">
+<link href="mustafa.css" rel="stylesheet">
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 </head>
@@ -17,7 +17,7 @@
     
     <?php include_once("conf.php");
 include_once("navigation.php");
-navbar("loginfr.php", "fifth", ["home", "about", "contact", "products", "signup","Cart"], "eng");
+navbar("loginfr.php", "fifth", ["Home", "About", "Contact", "Products", "Signup", "Cart"], "eng");
 
   if ($_SESSION["login"] == true) {
     if (isset($_POST["logoutbutton"])) {

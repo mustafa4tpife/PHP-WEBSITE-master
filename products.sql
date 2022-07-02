@@ -18,16 +18,7 @@ create Table products (
     PRIMARY KEY (productsID)
     
 );
-insert into products (productsName,imgname,price,prodid)
-values ("Fortnite","fortnite.jpg",19,1);
-insert into products (productsName,imgname,price,prodid)
-values ("Call of Duty 4","call-of-duty-black-ops-4-image-2.jpg",19,2);
-insert into products (productsName,imgname,price,prodid)
-values ("Grand Theft Auto (GTA)","gta-v-cover.jpg",19,3);
-insert into products (productsName,imgname,price,prodid)
-values ("Rainbow 6 SIEGE","r6.jpg",19,4);
-insert into products (productsName,imgname,price,prodid)
-values ("CALL OF DUTY","callofduty.jpg",29,5);
+
 create Table languges (
 
     langugesid int not null AUTO_INCREMENT,
@@ -40,10 +31,7 @@ create Table languges (
 
 
 );
-insert into languges (langugesname)
-values ("english");
-insert into languges (langugesname)
-values ("french");
+
 
 create Table descriptions (
 
@@ -61,6 +49,51 @@ create Table descriptions (
     PRIMARY KEY (descriptionsid)
 
 );
+
+CREATE TABLE Users(
+    UserId INT NOT NULL AUTO_INCREMENT,
+    UserName VARCHAR(30) NOT NULL UNIQUE,
+    UserPassword VARCHAR(255) NOT NULL,
+    uservalue varchar(5),
+    PRIMARY KEY (UserId)
+
+);
+
+create table Orders(
+    Orderid int NOT NULL AUTO_INCREMENT,
+    UserId int NOT NULL,
+
+    foreign key (UserId) REFERENCES Users(UserId),
+     PRIMARY KEY (Orderid)
+);
+  
+create table List(
+    Listid int NOT NULL AUTO_INCREMENT,
+    productsID int NOT NULL,
+    Orderid int NOT NULL,
+    Numberofitems int NOT NULL,
+
+    foreign key (productsID) references products(productsID),
+    foreign key (Orderid) REFERENCES Orders(Orderid),
+    PRIMARY KEY (Listid)
+    );
+
+insert into products (productsName,imgname,price,prodid)
+values ("Fortnite","fortnite.jpg",19,1);
+insert into products (productsName,imgname,price,prodid)
+values ("Call of Duty 4","call-of-duty-black-ops-4-image-2.jpg",19,2);
+insert into products (productsName,imgname,price,prodid)
+values ("Grand Theft Auto (GTA)","gta-v-cover.jpg",19,3);
+insert into products (productsName,imgname,price,prodid)
+values ("Rainbow 6 SIEGE","r6.jpg",19,4);
+insert into products (productsName,imgname,price,prodid)
+values ("CALL OF DUTY","callofduty.jpg",29,5);
+
+insert into languges (langugesname)
+values ("english");
+insert into languges (langugesname)
+values ("french");
+
 insert into descriptions (descriptionsname,productsID,langugesid)
 values ("Fortnite is an online video game developed by Epic Games and released in 2017",1,1);
 
@@ -90,12 +123,3 @@ values ("Call of Duty is a first-person shooter video game franchise published b
 
 insert into descriptions (descriptionsname,productsID,langugesid)
 values ("Call of Duty est une franchise de jeux vidéo de tir à la première personne publiée par Activision.",5,2);
-
-CREATE TABLE Users(
-    UserId INT NOT NULL AUTO_INCREMENT,
-    UserName VARCHAR(30) NOT NULL UNIQUE,
-    UserPassword VARCHAR(255) NOT NULL,
-    uservalue varchar(5),
-    PRIMARY KEY (UserId)
-
-);
