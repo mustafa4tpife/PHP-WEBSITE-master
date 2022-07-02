@@ -56,7 +56,7 @@ navbar("productsFr.php", "fourth", ["Home", "About", "Contact", "Products", "Sig
         <a href="Showdetail.php?ProductId=<?= $row["prodid"] ?>&language=fr">
           <img src="Assets/<?= $row["imgname"] ?>">
         </a>
-        <p class="price"><?= $row["price"] ?></p>
+        <p class="price"><?= $row["price"] ?>$</p>
         <p class="gamed"><?= $row["descriptionsname"] ?> </p>
         <form method="POST">
                 <input type="hidden" name="buyprod" value='<?= $row["productsID"] ?>'>

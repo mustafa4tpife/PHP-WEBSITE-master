@@ -4,50 +4,28 @@ CREATE DATABASE Mustafa;
 use Mustafa;
 
 create Table products (
-
     productsID int not null AUTO_INCREMENT,
-
     productsName varchar(30),
-
     imgname varchar(250),
-
     price int(3),
-
     prodid int(20),
-
     PRIMARY KEY (productsID)
-    
 );
 
 create Table languges (
-
     langugesid int not null AUTO_INCREMENT,
-
     langugesname varchar(30),
-
-
     PRIMARY KEY (langugesid)
-   
-
-
 );
 
-
 create Table descriptions (
-
     descriptionsid int not null AUTO_INCREMENT,
-
     descriptionsname varchar(255),
-
     productsID int not null,
-
     langugesid int not null,
-
     foreign key (productsID) references products(productsID),
      foreign key (langugesid) references languges (langugesid),
-
     PRIMARY KEY (descriptionsid)
-
 );
 
 CREATE TABLE Users(
@@ -56,13 +34,11 @@ CREATE TABLE Users(
     UserPassword VARCHAR(255) NOT NULL,
     uservalue varchar(5),
     PRIMARY KEY (UserId)
-
 );
 
 create table Orders(
     Orderid int NOT NULL AUTO_INCREMENT,
     UserId int NOT NULL,
-
     foreign key (UserId) REFERENCES Users(UserId),
      PRIMARY KEY (Orderid)
 );
