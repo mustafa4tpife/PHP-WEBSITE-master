@@ -67,6 +67,7 @@ if (isset($_POST["sho"])) {
   print("Quantity: ".$row["Numberofitems"]);?> <br> <?php
 
   
+  
 }
   
 
