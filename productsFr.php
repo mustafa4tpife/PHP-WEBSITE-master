@@ -12,7 +12,7 @@
   <?php
 
   include_once("navigation.php");
-  navbar("productseng.php", "fourth", ["Accueil", "à propos", "Contact", "Produits", "inscription et connexion","Chariot"], "fr");
+  navbar("productseng.php", "fourth", ["Accueil", "à propos", "Contact", "Produits", "inscription","Chariot"], "fr");
   ?>
  <?php
     include_once("commoncode.php")
@@ -44,7 +44,7 @@
       <div class="card">
         <h1><?= $row["productsName"] ?></h1>
         <a href="Showdetail.php?ProductId=<?= $row["prodid"] ?>&language=eng">
-          <img src="<?= $row["imgname"] ?>">
+          <img src="Assets/<?= $row["imgname"] ?>">
         </a>
         <p class="price"><?= $row["price"] ?></p>
         <p class="gamed"><?= $row["descriptionsname"] ?> </p>

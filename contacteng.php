@@ -16,7 +16,7 @@
   <?php
  
   include_once("navigation.php");
-  navbar("contactFr.php","third", ["home","about","contact","products","SignUpAndLogin","Cart"], "eng");
+  navbar("contactFr.php","third", ["Home", "About", "Contact", "Products", "Signup", "Cart"], "eng");
   ?>
   <div class="form-style-5">
     <form>

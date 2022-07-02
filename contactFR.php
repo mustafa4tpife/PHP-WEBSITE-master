@@ -15,7 +15,7 @@
     <?php 
   
   include_once("navigation.php");
-  navbar("contacteng.php", "third", ["Accueil", "à propos", "Contact", "Produits", "inscription et connexion","Chariot"], "fr");
+  navbar("contacteng.php", "third", ["Accueil", "à propos", "Contact", "Produits", "inscription","Chariot"], "fr");
   ?>
     
     <div class="form-style-5">

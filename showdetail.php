@@ -42,7 +42,7 @@
         $result = $sqlstatement->get_result();
         while ($row = $result->fetch_assoc()) { 
                     print($row["descriptionsname"]);
-                   ?> <img src="<?= $row["imgname"]?>"> <?php
+                   ?> <img src="Assets/<?= $row["imgname"]?>"> <?php
         }
     }
         if ($_GET["language"] == "fr") {
@@ -52,7 +52,7 @@
             $result = $sqlstatement->get_result();
             while ($row = $result->fetch_assoc()) { 
                         print($row["descriptionsname"]);
-                       ?> <img src="<?= $row["imgname"]?>"> <?php
+                       ?> <img src="Assets/<?= $row["imgname"]?>"> <?php
             }
         }
         ?>

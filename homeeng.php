@@ -16,11 +16,11 @@
     
 
     include_once("navigation.php");
-    navbar("homeeng.php","main", ["home","about","contact","products","signup","Cart"], "eng");
+    navbar("homeeng.php","main",["Home", "About", "Contact", "Products", "Signup", "Cart"], "eng");
   ?>
     <div class="text-center">
         
-        <img src="iraqflag.jpg"  alt="Cinque Terre" width="404" height="336">
+        <img src="Assets/iraqflag.jpg"  alt="Cinque Terre" width="404" height="336">
 
     </div>
 

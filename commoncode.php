@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 if(!isset($_SESSION["login"]))
 {
 
@@ -35,7 +35,7 @@ if(isset($_POST["logout"]))
 
 
 
-if($_SESSION["userloggedin"])
+if($_SESSION["login"])
 {
     print("welcome".$_SESSION["user"]);
     // user logour button

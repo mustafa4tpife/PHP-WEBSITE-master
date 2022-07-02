@@ -1,11 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="mustafa.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
 <?php
 
-
-include_once("conf.php");
 include_once("navigation.php");
-navbar("signupandloginfr.php", "fifth", ["home", "about", "contact", "products", "signup","Cart"], "eng");
+navbar("signup.php", "fifth", ["Home", "About", "Contact", "Products", "Signup", "Cart"], "eng");
 
-if ($_SESSION["Admin"]==true){
+if ($_SESSION["login"]==true){
     header("Location:logout.php");
     die();
 }
@@ -18,7 +28,7 @@ if ($_SESSION["Admin"]==true){
 
      if ($_POST["passwor_1"] == $_POST["password_2"]) {
 
-        $statement = $conn->prepare("INSERT INTO Users (UserName, UserPassword,Uservalue) VALUES (?,?,0)");
+        $statement = $conn->prepare("INSERT INTO Users(UserName, UserPassword,Uservalue) VALUES (?,?,0)");
         $statement->bind_param("ss",$_POST["UserName"],$_POST["passwor_1"]);
         $result = $statement->execute();
 
@@ -35,20 +45,8 @@ if ($_SESSION["Admin"]==true){
     };
 
 ?>
-<html>
 
-<body>
-
-    <head>
-
-        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-        <link href="./main.css" rel="stylesheet">
-        <link href="./mustafa.css" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    </head>
-
-    <form method="POST">
+<form method="POST">
         <div class="input-group">
             <label>Username</label>
             <input type="text" name="UserName" value="">

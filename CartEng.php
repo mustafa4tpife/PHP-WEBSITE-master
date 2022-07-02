@@ -11,7 +11,7 @@
 <body>
     <?php 
     include_once("navigation.php");
-    navbar("CartFr.php", "sixth", ["home", "about", "contact", "products", "SignUpAndLogin","Cart"], "eng");
+    navbar("CartFr.php", "sixth", ["Home", "About", "Contact", "Products", "Signup", "Cart"], "eng");
     
     $host = "localhost";
     $user = "root";
@@ -43,9 +43,10 @@
                  <div class="card">
                   <h1><?= $row["productsName"] ?></h1>
                   <a href="Showdetail.php?ProductId=<?= $row["prodid"] ?>&language=fr">
-                    <img src="<?= $row["imgname"] ?>">
+                    <img src="Assets/<?= $row["imgname"] ?>">
                   </a>
                   <p class="price"><?= $row["price"] ?>$</p>
+                  <p class="price">You have: <?= $value ?> in the cart</p>
                   <p class="gamed"><?= $row["descriptionsname"] ?> </p>
                   <form method="POST">
                     </form>
@@ -57,7 +58,8 @@
                   $count = 0;
                 }
               }
-            }print("Your cart is".$cartTotal);
+            }
+            print("Your cart total is ".$cartTotal."$"  );
         ?>
 </body>
 </html>

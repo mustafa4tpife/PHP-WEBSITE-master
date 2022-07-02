@@ -17,7 +17,7 @@
   <?php
 
 include_once("navigation.php");
-navbar("productsFr.php", "fourth", ["home", "about", "contact", "products", "SignUpAndLogin","Cart"], "eng");
+navbar("productsFr.php", "fourth", ["Home", "About", "Contact", "Products", "Signup", "Cart"], "eng");
   ?>
   <?php
   $count = 0;
@@ -54,7 +54,7 @@ navbar("productsFr.php", "fourth", ["home", "about", "contact", "products", "Sig
        <div class="card">
         <h1><?= $row["productsName"] ?></h1>
         <a href="Showdetail.php?ProductId=<?= $row["prodid"] ?>&language=fr">
-          <img src="<?= $row["imgname"] ?>">
+          <img src="Assets/<?= $row["imgname"] ?>">
         </a>
         <p class="price"><?= $row["price"] ?></p>
         <p class="gamed"><?= $row["descriptionsname"] ?> </p>

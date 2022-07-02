@@ -15,10 +15,10 @@
     <?php 
   
   include_once("navigation.php");
-  navbar("homefr.php","main", ["home","about","contact","products","signup","Cart"], "fr");
+  navbar("homefr.php","main", ["Accueil", "à propos", "Contact", "Produits", "inscription","Chariot"], "fr");
   ?>
     <div class="text-center">
-        <img src="iraqflag.jpg"  alt="Cinque Terre" width="404" height="336">
+        <img src="Assets/iraqflag.jpg"  alt="Cinque Terre" width="404" height="336">
 
     </div>
     <div class="progress">

@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="mustafa.css">
 
-    
+
 </head>
 
 <body>
     <div class="bg"></div>
-    <?php 
-   
+    <?php
+
     include_once("navigation.php");
-    navbar("aboutFR.php","second", ["home","about","contact","products","SignUpAndLogin","Cart"], "eng");
-  ?>
-   
+    navbar("aboutFR.php", "second", ["Home", "About", "Contact", "Products", "Signup", "Cart"], "eng");
+    ?>
+
     <div class="text-center">
-        <img src="thX1T7H78D.jpg" class="img-circle" alt="Cinque Terre" width="640" height="420">
+        <img src="Assets/thX1T7H78D.jpg" class="img-circle" alt="Cinque Terre" width="640" height="420">
 
     </div>
 
@@ -27,5 +27,6 @@
 
 
 
-</body> 
+</body>
+
 </html>

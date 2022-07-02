@@ -11,7 +11,7 @@
 <body>
     <?php 
     include_once("navigation.php");
-    navbar("CartEng.php", "sixth", ["Accueil", "à propos", "Contact", "Produits", "inscription et connexion","Chariot"], "fr");
+    navbar("CartEng.php", "sixth", ["Accueil", "à propos", "Contact", "Produits", "inscription","Chariot"], "fr");
     
     ?>
 </body>

@@ -13,7 +13,7 @@ function navbar($URL, $activepage, $buttontexts,$languge)
 ?>
   <nav>
     <a class="lan" href="<?= $URL ?>">
-      <img class="langugeimg" src="languge.jpg" alt="HTML tutorial">
+      <img class="langugeimg" src="Assets/languge.jpg" alt="HTML tutorial">
     </a>
 
 

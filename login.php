@@ -1,16 +1,24 @@
-<?php
 
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="mustafa.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+<?php
 
 $username = "";
 $errors   = array(); 
 
-if (!isset($textt)){
-    $textt = "signup/login";
-}
 
 include_once("conf.php");
 include_once("navigation.php");
-navbar("loginfr.php", "fifth", ["home", "about", "contact", "products", $textt,"Cart"], "eng");
+navbar("loginfr.php", "fifth", ["Home", "About", "Contact", "Products", "Signup", "Cart"], "eng");
 
     
 
@@ -41,25 +49,6 @@ echo "<script type='text/javascript'>alert('$message');</script>";
 
 ?>
 
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-<link href="./main.css" rel="stylesheet">
-<link href="./mustafa.css" rel="stylesheet">
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
-</head>
-
-   
-<html>
-    <body>
 <?php print_r($_SESSION["Admin"]); ?>
     <form method="post" action="login.php">
         <div class="input-group">

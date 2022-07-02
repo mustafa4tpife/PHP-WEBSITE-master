@@ -16,11 +16,11 @@
     <?php 
    
    include_once("navigation.php");
-    navbar("abouteng.php", "second", ["Accueil", "à propos", "Contact", "Produits", "inscription et connexion","Chariot"], "fr");
+    navbar("abouteng.php", "second", ["Accueil", "à propos", "Contact", "Produits", "inscription","Chariot"], "fr");
   ?>
    
     <div class="text-center">
-        <img src="thX1T7H78D.jpg" class="img-circle" alt="Cinque Terre" width="640" height="420">
+        <img src="Assets/thX1T7H78D.jpg" class="img-circle" alt="Cinque Terre" width="640" height="420">
 
     </div>
 </body>

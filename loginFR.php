@@ -28,7 +28,7 @@ if (isset($_POST['UserName']) && isset($_POST['Password'])) {
         $_SESSION["Admin"] = true;}
         $_SESSION["login"] = true;
         $_SESSION["UserRole"] = $data[0];
-        header("location: homeeng.php");
+        header("location: logoutfr.php");
     } else {
         $message = "Please enter a valid Username and Password";
 echo "<script type='text/javascript'>alert('$message');</script>";
