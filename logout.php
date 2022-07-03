@@ -89,30 +89,19 @@ if (isset($_POST["sho"])) {
 		$_POST["lName"] ,
 		$_POST["dName"]))
 	{
-		$statement = $conn->prepare("
-			INSERT INTO products ( productsName, imgname, price ) VALUES ( ?,?,? );
-			INSERT INTO descriptions (descriptionsname, productsid, langugesid) VALUES ( ?, 
-				( SELECT productsID FROM products WHERE produtsName = ? ),
-				( SELECT languagesid FROM languages WHERE languagesname = ? )
-			);
-		");
+		$statement = $conn->prepare("INSERT INTO products ( productsName, imgname, price ) VALUES ( ?,?,? )");
 
-		$statement->bind_param("sss",
-			$_POST["pName"] ,
-			$_POST["pImg"] ,
-			$_POST["pPrice"] ,
-			$_POST["dName"] ,
-			$_POST["pName"] , 
-			$_POST["lName"]
-		);
+		$statement->bind_param("sss", $_POST["pName"], $_POST["pImg"], $_POST["pPrice"]);
+		
+		$statement->exute();
+		
+		$statement = $conn->prepare("INSERT INTO descriptions (descriptionsname, productsid, langugesid) VALUES ( ?, ( SELECT productsID FROM products WHERE produtsName = ? ), ( SELECT languagesid FROM languages WHERE languagesname = ? ))");
 
-		if($statement->exute())
-		{
-			echo "...works";
-		}
+		$statement->bind_param("sss", $_POST["dName"], $_POST["pName"], $_POST["lName"]);
+		
+		$statement->exute();
 
 	}
-
 ?>
 
 <form method="post">
