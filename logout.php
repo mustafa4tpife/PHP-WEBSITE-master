@@ -91,20 +91,13 @@ if (isset($_POST["sho"])) {
 	{
 		$statement = $conn->prepare("
 			INSERT INTO products ( productsName, imgname, price ) VALUES ( ?,?,? );
-			INSERT INTO descriptions (descriptionsname, productsid, langugesid) VALUES ( ?, 
+			INSERT INTO descriptions (descriptionsname, productsID, langugesid) VALUES ( ?, 
 				( SELECT productsID FROM products WHERE produtsName = ? ),
-				( SELECT languagesid FROM languages WHERE languagesname = ? )
+				( SELECT langugesid FROM languges WHERE langugesname = ? )
 			);
 		");
 
-		$statement->bind_param("sss",
-			$_POST["pName"] ,
-			$_POST["pImg"] ,
-			$_POST["pPrice"] ,
-			$_POST["dName"] ,
-			$_POST["pName"] , 
-			$_POST["lName"]
-		);
+		$statement->bind_param("ssssss", $_POST["pName"], $_POST["pImg"],$_POST["pPrice"], $_POST["dName"], $_POST["pName"], $_POST["lName"]);
 
 		if($statement->exute())
 		{
